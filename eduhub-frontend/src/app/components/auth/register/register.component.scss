@@ -1,0 +1,114 @@
+// Import the login styles as base
+@import '../login/login.component.scss';
+
+// Additional styles specific to registration
+.auth-container {
+  .auth-card {
+    .card-body {
+      padding: 3rem !important;
+      
+      @media (max-width: 768px) {
+        padding: 2rem !important;
+      }
+    }
+  }
+
+  // Form layout improvements for registration
+  .row {
+    .col-md-6 {
+      @media (max-width: 768px) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  // Success alert styling
+  .alert-success {
+    background-color: #d1f2eb;
+    border-color: #a7f3d0;
+    color: #065f46;
+  }
+
+  // Optional field styling
+  .form-label small {
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+
+  // Date input styling
+  input[type="date"] {
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      filter: invert(0.5);
+    }
+  }
+
+  // Phone number input
+  input[type="tel"] {
+    &::placeholder {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Enhanced form validation for registration
+.form-control {
+  &.is-valid {
+    border-color: #10b981;
+    
+    &:focus {
+      border-color: #10b981;
+      box-shadow: 0 0 0 0.2rem rgba(16, 185, 129, 0.25);
+    }
+  }
+}
+
+// Password strength indicator (could be enhanced further)
+.password-strength {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  
+  &.weak {
+    color: #ef4444;
+  }
+  
+  &.medium {
+    color: #f59e0b;
+  }
+  
+  &.strong {
+    color: #10b981;
+  }
+}
+
+// Responsive improvements for registration form
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 1rem;
+    
+    .row .col-md-6 {
+      margin-bottom: 1rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Animation for success message
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.alert-success {
+  animation: successPulse 0.6s ease-in-out;
+}

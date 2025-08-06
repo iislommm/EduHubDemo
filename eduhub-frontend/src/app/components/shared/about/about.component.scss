@@ -1,0 +1,222 @@
+.about-hero {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  
+  .display-4 {
+    color: var(--dark-color);
+  }
+  
+  img {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+  }
+}
+
+.stats-section {
+  .stat-card {
+    padding: 2rem 1rem;
+    
+    h3 {
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(79, 70, 229, 0.1);
+    }
+    
+    p {
+      color: #6b7280;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.mission-section {
+  .mission-card,
+  .vision-card {
+    padding: 2rem;
+    
+    .icon-wrapper {
+      text-align: center;
+      
+      i {
+        text-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+      }
+    }
+    
+    h3 {
+      color: var(--dark-color);
+    }
+    
+    .lead {
+      color: #6b7280;
+      line-height: 1.7;
+    }
+  }
+}
+
+.features-section {
+  .feature-card {
+    border: none;
+    transition: var(--transition);
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      i {
+        transition: var(--transition);
+      }
+    }
+    
+    &:hover .feature-icon i {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.team-section {
+  .team-card {
+    border: none;
+    transition: var(--transition);
+    overflow: hidden;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-photo {
+      height: 250px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    &:hover .team-photo {
+      transform: scale(1.05);
+    }
+    
+    .social-links {
+      margin-top: 1rem;
+      
+      .btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        
+        &:hover {
+          background-color: var(--primary-color);
+          border-color: var(--primary-color);
+          color: white;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+.contact-cta {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  
+  .cta-buttons {
+    .btn {
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: var(--transition);
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+    }
+    
+    .btn-light {
+      &:hover {
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+      }
+    }
+    
+    .btn-outline-light {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: white;
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .about-hero {
+    text-align: center;
+    
+    .col-lg-6:first-child {
+      margin-bottom: 3rem;
+    }
+  }
+  
+  .mission-section {
+    .mission-card,
+    .vision-card {
+      padding: 1.5rem;
+      text-align: center;
+    }
+  }
+  
+  .stats-section {
+    .stat-card {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  .contact-cta {
+    .cta-buttons {
+      .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-card,
+.feature-card,
+.team-card,
+.mission-card,
+.vision-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.stat-card:nth-child(2) { animation-delay: 0.1s; }
+.stat-card:nth-child(3) { animation-delay: 0.2s; }
+.stat-card:nth-child(4) { animation-delay: 0.3s; }
+
+.feature-card:nth-child(2) { animation-delay: 0.1s; }
+.feature-card:nth-child(3) { animation-delay: 0.2s; }
+.feature-card:nth-child(4) { animation-delay: 0.3s; }
+.feature-card:nth-child(5) { animation-delay: 0.4s; }
+.feature-card:nth-child(6) { animation-delay: 0.5s; }
+
+.team-card:nth-child(2) { animation-delay: 0.1s; }
+.team-card:nth-child(3) { animation-delay: 0.2s; }
+.team-card:nth-child(4) { animation-delay: 0.3s; }
